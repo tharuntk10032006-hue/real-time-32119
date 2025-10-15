@@ -9,7 +9,7 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
-    }, 6100);
+    }, 4100);
 
     return () => clearTimeout(timer);
   }, [onComplete]);

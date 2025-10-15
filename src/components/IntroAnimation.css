@@ -23,7 +23,7 @@
   height: 300px;
   overflow: hidden;
   animation-name: zoom-in;
-  animation-delay: 2.5s;
+  animation-delay: 0.5s;
   animation-duration: 3.5s;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
@@ -56,16 +56,13 @@
   left: 38%;
   top: 0;
   transform: rotate(180deg);
-  clip-path: inset(100% 0 0 0);
-  animation: draw-vertical 1.5s ease-out forwards;
-  animation-delay: 0.3s;
 }
 
 .netflix-intro[data-letter="T"] .helper-1 .effect-brush {
   animation-name: brush-moving;
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 
 .netflix-intro[data-letter="T"] .helper-1 .effect-brush [class*="fur-"] {
@@ -80,16 +77,13 @@
   top: -55px;
   transform: rotate(270deg);
   overflow: hidden;
-  clip-path: inset(0 100% 0 0);
-  animation: draw-horizontal 1.2s ease-out forwards;
-  animation-delay: 0s;
 }
 
 .netflix-intro[data-letter="T"] .helper-2 .effect-brush {
   animation-name: brush-moving;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  animation-delay: 2.5s;
+  animation-delay: 0.5s;
 }
 
 /* Common Helper Styles */
@@ -155,7 +149,7 @@
   opacity: 0;
   animation-name: showing-lumieres;
   animation-duration: 2s;
-  animation-delay: 3.6s;
+  animation-delay: 1.6s;
   animation-fill-mode: forwards;
   will-change: opacity;
   transform: translate3d(0, 0, 0);
@@ -292,16 +286,6 @@
 }
 
 /* Keyframes */
-@keyframes draw-vertical {
-  0% { clip-path: inset(100% 0 0 0); }
-  100% { clip-path: inset(0 0 0 0); }
-}
-
-@keyframes draw-horizontal {
-  0% { clip-path: inset(0 100% 0 0); }
-  100% { clip-path: inset(0 0 0 0); }
-}
-
 @keyframes brush-moving {
   0% { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(0, -100%, 0); }
