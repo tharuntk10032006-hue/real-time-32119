@@ -10,6 +10,7 @@ interface EventCard {
   name: string;
   tagline: string;
   poster: string;
+  registrationUrl: string;
   coordinators: {
     name: string;
     phone: string;
@@ -23,6 +24,7 @@ const events: EventCard[] = [
     name: 'Brand-o-Vation: The Last Ad-pocalypse',
     tagline: 'Go Viral or Go Dead 🧟‍♂️',
     poster: brandovationPoster,
+    registrationUrl: 'https://brand-o-vation.vercel.app',
     coordinators: [
       { name: 'Lalith J', phone: '9791382086', year: '2nd yr' },
       { name: 'Kamalika N M', phone: '9042887720', year: '2nd yr' },
@@ -34,6 +36,7 @@ const events: EventCard[] = [
     name: 'The Paradox Protocol',
     tagline: 'Reimagine. Rebuild. Redefine Reality.',
     poster: paradisePoster,
+    registrationUrl: 'https://paradox-protocol-theta.vercel.app',
     coordinators: [
       { name: 'Varshini', phone: '8667801807', year: '2nd yr' },
       { name: 'Harsha Nandhini', phone: '9840335963', year: '2nd yr' },
@@ -45,6 +48,7 @@ const events: EventCard[] = [
     name: 'Ventura',
     tagline: 'Play. Survive. Conquer.',
     poster: venturaPoster,
+    registrationUrl: 'https://ventura-zeta.vercel.app',
     coordinators: [
       { name: 'Sanjay V', phone: '8610315770', year: '2nd yr' },
       { name: 'Vetrichelva RS', phone: '9344016363', year: '2nd yr' },
@@ -56,6 +60,7 @@ const events: EventCard[] = [
     name: 'Capitalyze',
     tagline: 'Strategize the Business, Seize the Throne.',
     poster: capitalyzePoster,
+    registrationUrl: 'https://capitalyze.vercel.app',
     coordinators: [
       { name: 'Manodharani', phone: '8438616965', year: '2nd yr' },
       { name: 'Bhagavadgitan', phone: '9047900060', year: '2nd yr' },
@@ -106,7 +111,10 @@ const EventFlipCard = ({ event }: { event: EventCard }) => {
             </div>
           </div>
 
-          <Button className="w-full bg-primary hover:bg-primary/90 text-white shadow-glow mt-4 flex-shrink-0">
+          <Button 
+            className="w-full bg-primary hover:bg-primary/90 text-white shadow-glow mt-4 flex-shrink-0"
+            onClick={() => window.open(event.registrationUrl, '_blank')}
+          >
             Register Now
           </Button>
         </div>
