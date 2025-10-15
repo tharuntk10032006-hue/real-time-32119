@@ -1,0 +1,286 @@
+/* Intro Container */
+#intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  overflow: hidden;
+  z-index: 9999;
+  contain: strict;
+  content-visibility: auto;
+}
+
+.netflix-intro {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  animation-name: zoom-in;
+  animation-delay: 0.5s;
+  animation-duration: 3.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.netflix-intro::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #000000;
+  width: 150%;
+  height: 30%;
+  left: -25%;
+  bottom: -27%;
+  border-radius: 50%;
+  z-index: 5;
+  transform-origin: left center;
+}
+
+/* T Letter */
+.netflix-intro[data-letter="T"] {
+  transform-origin: center center;
+}
+
+.netflix-intro[data-letter="T"] .helper-1 {
+  width: 19.5%;
+  height: 100%;
+  left: 38%;
+  top: 0;
+  transform: rotate(180deg);
+}
+
+.netflix-intro[data-letter="T"] .helper-1 .effect-brush {
+  animation-name: brush-moving;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+.netflix-intro[data-letter="T"] .helper-1 .effect-brush [class*="fur-"] {
+  bottom: 0;
+  height: 40%;
+}
+
+.netflix-intro[data-letter="T"] .helper-2 {
+  width: 17.5%;
+  height: 54%;
+  left: 39%;
+  top: -55px;
+  transform: rotate(270deg);
+  overflow: hidden;
+}
+
+.netflix-intro[data-letter="T"] .helper-2 .effect-brush {
+  animation-name: brush-moving;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+/* Common Helper Styles */
+.netflix-intro [class*="helper-"] {
+  position: absolute;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.netflix-intro [class*="helper-"] .effect-brush {
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  top: 0;
+  overflow: hidden;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.netflix-intro [class*="helper-"] .effect-brush::before {
+  display: block;
+  content: "";
+  position: absolute;
+  background-color: #0077ff;
+  width: 100%;
+  height: 70%;
+  filter: blur(12px);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.netflix-intro [class*="helper-"] .effect-brush [class*="fur-"] {
+  display: block;
+  position: absolute;
+  bottom: 10%;
+  height: 30%;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Fur gradients - optimized subset */
+.fur-1 { left: 0%; width: 3.8%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 15%, rgba(0, 0, 0, 0) 81%); }
+.fur-2 { left: 6.6%; width: 4.8%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 37%, rgba(0, 0, 0, 0) 100%); }
+.fur-3 { left: 11.4%; width: 4%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 23%, rgba(0, 0, 0, 0) 100%); }
+.fur-4 { left: 15.4%; width: 4%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 15%, rgba(0, 0, 0, 0) 86%); }
+.fur-5 { left: 21.9%; width: 4%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 20%, rgba(0, 0, 0, 0) 100%); }
+.fur-6 { left: 27.9%; width: 4%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 35%, rgba(0, 0, 0, 0) 95%); }
+.fur-7 { left: 31.9%; width: 3.5%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 39%, rgba(0, 0, 0, 0) 95%); }
+.fur-8 { left: 40%; width: 6%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 47%, rgba(0, 0, 0, 0) 100%); }
+.fur-9 { left: 48%; width: 5.5%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 29%, rgba(0, 0, 0, 0) 100%); }
+.fur-10 { left: 53.5%; width: 3%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 39%, rgba(0, 0, 0, 0) 95%); }
+.fur-11 { left: 60.6%; width: 2.4%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 34%, rgba(0, 0, 0, 0) 100%); }
+.fur-12 { left: 67%; width: 1.5%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 27%, rgba(0, 0, 0, 0) 95%); }
+.fur-13 { left: 73.6%; width: 2.2%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 28%, rgba(0, 0, 0, 0) 92%); }
+.fur-14 { left: 83%; width: 2.5%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 21%, rgba(0, 0, 0, 0) 100%); }
+.fur-15 { left: 90%; width: 2.8%; background: linear-gradient(to bottom, #0077ff 0%, #0077ff 30%, rgba(0, 0, 0, 0) 100%); }
+
+/* Lumieres effect */
+.netflix-intro [class*="helper-"] .effect-lumieres {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation-name: showing-lumieres;
+  animation-duration: 2s;
+  animation-delay: 1.6s;
+  animation-fill-mode: forwards;
+  will-change: opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+.netflix-intro [class*="helper-"] .effect-lumieres [class*="lamp-"] {
+  position: absolute;
+  display: block;
+  height: 100%;
+  background: var(--color);
+  filter: blur(4px);
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+.netflix-intro [class*="helper-"] .effect-lumieres [class*="lamp-"]::before {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--color);
+  filter: blur(4px);
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Lamp styles - optimized subset */
+.lamp-1 { --color: #0088ff; z-index: 6; left: 0.7%; width: 1%; animation-delay: 0.96s; }
+.lamp-1::before { left: 96%; animation-delay: 0.22s; }
+.lamp-2 { --color: #00ddff; left: 5.8%; width: 2.1%; animation-delay: 0.32s; }
+.lamp-2::before { left: 50%; animation-delay: 0.17s; }
+.lamp-3 { --color: #0066ff; left: 12.9%; width: 1.4%; animation-delay: 1.14s; }
+.lamp-3::before { left: 49%; animation-delay: 0.15s; }
+.lamp-4 { --color: #04a8fd; left: 21.2%; width: 2.5%; animation-delay: 0.51s; }
+.lamp-4::before { left: 21%; animation-delay: 0.65s; }
+.lamp-5 { --color: #0088ff; left: 30.5%; width: 3%; animation-delay: 0.93s; }
+.lamp-5::before { left: 118%; animation-delay: 0.06s; }
+.lamp-6 { --color: #0077ff; left: 41%; width: 2.2%; animation-delay: 0.63s; }
+.lamp-6::before { left: 114%; animation-delay: 1.3s; }
+.lamp-7 { --color: #01ccff; left: 51.7%; width: 0.5%; animation-delay: 1.25s; }
+.lamp-7::before { left: 3%; animation-delay: 0.4s; }
+.lamp-8 { --color: #0080ff; left: 57.2%; width: 2%; animation-delay: 1.6s; }
+.lamp-8::before { left: 42%; animation-delay: 0.67s; }
+.lamp-9 { --color: #0099ff; left: 65.8%; width: 1.7%; animation-delay: 1.72s; }
+.lamp-9::before { left: 56%; animation-delay: 0.59s; }
+.lamp-10 { --color: #0055ff; left: 74.3%; width: 2%; animation-delay: 1.34s; }
+.lamp-10::before { left: 18%; animation-delay: 0.4s; }
+.lamp-11 { --color: #0066ff; left: 78.5%; width: 2%; animation-delay: 1.88s; }
+.lamp-11::before { left: 166%; animation-delay: 0.17s; }
+.lamp-12 { --color: #04a8fd; left: 85.3%; width: 1.1%; animation-delay: 1.51s; }
+.lamp-12::before { left: 129%; animation-delay: 1.49s; }
+.lamp-13 { --color: #0078fe; left: 88.8%; width: 2%; animation-delay: 1s; }
+.lamp-13::before { left: 51%; animation-delay: 1.69s; }
+.lamp-14 { --color: #0088ff; left: 92.4%; width: 2.4%; animation-delay: 1.73s; }
+.lamp-14::before { left: 139%; animation-delay: 0.57s; }
+.lamp-15 { --color: #06a8fd; left: 96.2%; width: 2.1%; animation-delay: 1.09s; }
+.lamp-15::before { left: 149%; animation-delay: 0.69s; }
+
+.lamp-1, .lamp-3, .lamp-5, .lamp-7, .lamp-9, .lamp-11, .lamp-13, .lamp-15 {
+  animation-name: lumieres-moving-left;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lamp-1::before, .lamp-3::before, .lamp-5::before, .lamp-7::before, .lamp-9::before, .lamp-11::before, .lamp-13::before, .lamp-15::before {
+  animation-name: lumieres-moving-left;
+  animation-duration: 2.8s;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lamp-2, .lamp-4, .lamp-6, .lamp-8, .lamp-10, .lamp-12, .lamp-14 {
+  animation-name: lumieres-moving-right;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lamp-2::before, .lamp-4::before, .lamp-6::before, .lamp-8::before, .lamp-10::before, .lamp-12::before, .lamp-14::before {
+  animation-name: lumieres-moving-right;
+  animation-duration: 2.8s;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Keyframes */
+@keyframes brush-moving {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -100%, 0); }
+}
+
+@keyframes fading-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes lumieres-moving-right {
+  0% { transform: translate3d(0, 0, 0) scaleX(1); opacity: 1; }
+  30% { transform: translate3d(-20px, 0, 0) scaleX(1.2); opacity: 1; }
+  60% { transform: translate3d(-80px, 0, 0) scaleX(2); opacity: 0.8; }
+  100% { transform: translate3d(-150px, 0, 0) scaleX(3.5); opacity: 0; }
+}
+
+@keyframes lumieres-moving-left {
+  0% { transform: translate3d(0, 0, 0) scaleX(1); opacity: 1; }
+  30% { transform: translate3d(20px, 0, 0) scaleX(1.2); opacity: 1; }
+  60% { transform: translate3d(80px, 0, 0) scaleX(2); opacity: 0.8; }
+  100% { transform: translate3d(150px, 0, 0) scaleX(3.5); opacity: 0; }
+}
+
+@keyframes zoom-in {
+  0% { transform: scale(1) translate3d(0, 0, 0); }
+  100% { transform: scale(15) translate3d(0, 0, 0); }
+}
+
+@keyframes showing-lumieres {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fading-lumieres-box {
+  0% { background-color: rgba(0, 119, 255, 0.5); }
+  100% { background-color: rgba(0, 119, 255, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .netflix-intro {
+    animation-duration: 1.5s;
+  }
+  
+  .netflix-intro [class*="helper-"] .effect-brush {
+    animation-duration: 1s;
+  }
+}
