@@ -180,76 +180,106 @@
 /* Lamp styles - expanded for denser animation */
 .lamp-1 { --color: #0077ff; z-index: 6; left: 0.7%; width: 1%; animation-delay: 0.96s; }
 .lamp-1::before { left: 96%; animation-delay: 0.22s; }
-.lamp-2 { --color: #0077ff; left: 3%; width: 1.5%; animation-delay: 0.45s; }
+.lamp-2 { --color: #0077ff; left: 2.5%; width: 1.2%; animation-delay: 0.45s; }
 .lamp-2::before { left: 80%; animation-delay: 0.3s; }
-.lamp-3 { --color: #0077ff; left: 5.8%; width: 2.1%; animation-delay: 0.32s; }
+.lamp-3 { --color: #0077ff; left: 4.8%; width: 1.5%; animation-delay: 0.32s; }
 .lamp-3::before { left: 50%; animation-delay: 0.17s; }
-.lamp-4 { --color: #0077ff; left: 9%; width: 1.8%; animation-delay: 0.75s; }
+.lamp-4 { --color: #0077ff; left: 7%; width: 1.3%; animation-delay: 0.75s; }
 .lamp-4::before { left: 60%; animation-delay: 0.5s; }
-.lamp-5 { --color: #0077ff; left: 12.9%; width: 1.4%; animation-delay: 1.14s; }
+.lamp-5 { --color: #0077ff; left: 9.2%; width: 1.4%; animation-delay: 1.14s; }
 .lamp-5::before { left: 49%; animation-delay: 0.15s; }
-.lamp-6 { --color: #0077ff; left: 16.5%; width: 2%; animation-delay: 0.88s; }
+.lamp-6 { --color: #0077ff; left: 11.5%; width: 1.6%; animation-delay: 0.88s; }
 .lamp-6::before { left: 70%; animation-delay: 0.42s; }
-.lamp-7 { --color: #0077ff; left: 21.2%; width: 2.5%; animation-delay: 0.51s; }
+.lamp-7 { --color: #0077ff; left: 13.8%; width: 1.5%; animation-delay: 0.51s; }
 .lamp-7::before { left: 21%; animation-delay: 0.65s; }
-.lamp-8 { --color: #0077ff; left: 25%; width: 1.6%; animation-delay: 1.05s; }
+.lamp-8 { --color: #0077ff; left: 16%; width: 1.4%; animation-delay: 1.05s; }
 .lamp-8::before { left: 90%; animation-delay: 0.28s; }
-.lamp-9 { --color: #0077ff; left: 30.5%; width: 3%; animation-delay: 0.93s; }
+.lamp-9 { --color: #0077ff; left: 18.3%; width: 1.7%; animation-delay: 0.93s; }
 .lamp-9::before { left: 118%; animation-delay: 0.06s; }
-.lamp-10 { --color: #0077ff; left: 35%; width: 2.3%; animation-delay: 0.68s; }
+.lamp-10 { --color: #0077ff; left: 20.5%; width: 1.5%; animation-delay: 0.68s; }
 .lamp-10::before { left: 55%; animation-delay: 0.38s; }
-.lamp-11 { --color: #0077ff; left: 41%; width: 2.2%; animation-delay: 0.63s; }
+.lamp-11 { --color: #0077ff; left: 22.8%; width: 1.6%; animation-delay: 0.63s; }
 .lamp-11::before { left: 114%; animation-delay: 1.3s; }
-.lamp-12 { --color: #0077ff; left: 46%; width: 1.9%; animation-delay: 1.42s; }
+.lamp-12 { --color: #0077ff; left: 25%; width: 1.4%; animation-delay: 1.42s; }
 .lamp-12::before { left: 85%; animation-delay: 0.54s; }
-.lamp-13 { --color: #0077ff; left: 51.7%; width: 0.5%; animation-delay: 1.25s; }
+.lamp-13 { --color: #0077ff; left: 27.3%; width: 1.3%; animation-delay: 1.25s; }
 .lamp-13::before { left: 3%; animation-delay: 0.4s; }
-.lamp-14 { --color: #0077ff; left: 54.5%; width: 1.8%; animation-delay: 0.82s; }
+.lamp-14 { --color: #0077ff; left: 29.5%; width: 1.5%; animation-delay: 0.82s; }
 .lamp-14::before { left: 95%; animation-delay: 0.62s; }
-.lamp-15 { --color: #0077ff; left: 57.2%; width: 2%; animation-delay: 1.6s; }
+.lamp-15 { --color: #0077ff; left: 31.8%; width: 1.6%; animation-delay: 1.6s; }
 .lamp-15::before { left: 42%; animation-delay: 0.67s; }
-.lamp-16 { --color: #0077ff; left: 61%; width: 2.2%; animation-delay: 1.18s; }
+.lamp-16 { --color: #0077ff; left: 34%; width: 1.5%; animation-delay: 1.18s; }
 .lamp-16::before { left: 75%; animation-delay: 0.48s; }
-.lamp-17 { --color: #0077ff; left: 65.8%; width: 1.7%; animation-delay: 1.72s; }
+.lamp-17 { --color: #0077ff; left: 36.3%; width: 1.4%; animation-delay: 1.72s; }
 .lamp-17::before { left: 56%; animation-delay: 0.59s; }
-.lamp-18 { --color: #0077ff; left: 69.5%; width: 2.1%; animation-delay: 0.95s; }
+.lamp-18 { --color: #0077ff; left: 38.5%; width: 1.6%; animation-delay: 0.95s; }
 .lamp-18::before { left: 88%; animation-delay: 0.35s; }
-.lamp-19 { --color: #0077ff; left: 74.3%; width: 2%; animation-delay: 1.34s; }
+.lamp-19 { --color: #0077ff; left: 40.8%; width: 1.5%; animation-delay: 1.34s; }
 .lamp-19::before { left: 18%; animation-delay: 0.4s; }
-.lamp-20 { --color: #0077ff; left: 78.5%; width: 2%; animation-delay: 1.88s; }
+.lamp-20 { --color: #0077ff; left: 43%; width: 1.4%; animation-delay: 1.88s; }
 .lamp-20::before { left: 166%; animation-delay: 0.17s; }
-.lamp-21 { --color: #0077ff; left: 81.5%; width: 1.7%; animation-delay: 1.12s; }
+.lamp-21 { --color: #0077ff; left: 45.3%; width: 1.5%; animation-delay: 1.12s; }
 .lamp-21::before { left: 65%; animation-delay: 0.72s; }
-.lamp-22 { --color: #0077ff; left: 85.3%; width: 1.1%; animation-delay: 1.51s; }
+.lamp-22 { --color: #0077ff; left: 47.5%; width: 1.3%; animation-delay: 1.51s; }
 .lamp-22::before { left: 129%; animation-delay: 1.49s; }
-.lamp-23 { --color: #0077ff; left: 88.8%; width: 2%; animation-delay: 1s; }
+.lamp-23 { --color: #0077ff; left: 49.8%; width: 1.6%; animation-delay: 1s; }
 .lamp-23::before { left: 51%; animation-delay: 1.69s; }
-.lamp-24 { --color: #0077ff; left: 92.4%; width: 2.4%; animation-delay: 1.73s; }
+.lamp-24 { --color: #0077ff; left: 52%; width: 1.5%; animation-delay: 1.73s; }
 .lamp-24::before { left: 139%; animation-delay: 0.57s; }
-.lamp-25 { --color: #0077ff; left: 96.2%; width: 2.1%; animation-delay: 1.09s; }
+.lamp-25 { --color: #0077ff; left: 54.3%; width: 1.4%; animation-delay: 1.09s; }
 .lamp-25::before { left: 149%; animation-delay: 0.69s; }
+.lamp-26 { --color: #0077ff; left: 56.5%; width: 1.5%; animation-delay: 0.78s; }
+.lamp-26::before { left: 92%; animation-delay: 0.33s; }
+.lamp-27 { --color: #0077ff; left: 58.8%; width: 1.6%; animation-delay: 1.24s; }
+.lamp-27::before { left: 67%; animation-delay: 0.44s; }
+.lamp-28 { --color: #0077ff; left: 61%; width: 1.4%; animation-delay: 0.89s; }
+.lamp-28::before { left: 103%; animation-delay: 0.56s; }
+.lamp-29 { --color: #0077ff; left: 63.3%; width: 1.5%; animation-delay: 1.45s; }
+.lamp-29::before { left: 78%; animation-delay: 0.27s; }
+.lamp-30 { --color: #0077ff; left: 65.5%; width: 1.3%; animation-delay: 0.67s; }
+.lamp-30::before { left: 44%; animation-delay: 0.61s; }
+.lamp-31 { --color: #0077ff; left: 67.8%; width: 1.6%; animation-delay: 1.56s; }
+.lamp-31::before { left: 121%; animation-delay: 0.39s; }
+.lamp-32 { --color: #0077ff; left: 70%; width: 1.4%; animation-delay: 0.92s; }
+.lamp-32::before { left: 85%; animation-delay: 0.52s; }
+.lamp-33 { --color: #0077ff; left: 72.3%; width: 1.5%; animation-delay: 1.37s; }
+.lamp-33::before { left: 59%; animation-delay: 0.46s; }
+.lamp-34 { --color: #0077ff; left: 74.5%; width: 1.6%; animation-delay: 0.84s; }
+.lamp-34::before { left: 97%; animation-delay: 0.31s; }
+.lamp-35 { --color: #0077ff; left: 76.8%; width: 1.4%; animation-delay: 1.28s; }
+.lamp-35::before { left: 73%; animation-delay: 0.58s; }
+.lamp-36 { --color: #0077ff; left: 79%; width: 1.5%; animation-delay: 0.71s; }
+.lamp-36::before { left: 112%; animation-delay: 0.43s; }
+.lamp-37 { --color: #0077ff; left: 81.3%; width: 1.6%; animation-delay: 1.64s; }
+.lamp-37::before { left: 48%; animation-delay: 0.36s; }
+.lamp-38 { --color: #0077ff; left: 83.5%; width: 1.4%; animation-delay: 0.98s; }
+.lamp-38::before { left: 88%; animation-delay: 0.49s; }
+.lamp-39 { --color: #0077ff; left: 85.8%; width: 1.5%; animation-delay: 1.41s; }
+.lamp-39::before { left: 64%; animation-delay: 0.53s; }
+.lamp-40 { --color: #0077ff; left: 88%; width: 1.6%; animation-delay: 0.76s; }
+.lamp-40::before { left: 134%; animation-delay: 0.41s; }
 
-.lamp-1, .lamp-3, .lamp-5, .lamp-7, .lamp-9, .lamp-11, .lamp-13, .lamp-15, .lamp-17, .lamp-19, .lamp-21, .lamp-23, .lamp-25 {
+.lamp-1, .lamp-3, .lamp-5, .lamp-7, .lamp-9, .lamp-11, .lamp-13, .lamp-15, .lamp-17, .lamp-19, .lamp-21, .lamp-23, .lamp-25, .lamp-27, .lamp-29, .lamp-31, .lamp-33, .lamp-35, .lamp-37, .lamp-39 {
   animation-name: lumieres-moving-left;
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.lamp-1::before, .lamp-3::before, .lamp-5::before, .lamp-7::before, .lamp-9::before, .lamp-11::before, .lamp-13::before, .lamp-15::before, .lamp-17::before, .lamp-19::before, .lamp-21::before, .lamp-23::before, .lamp-25::before {
+.lamp-1::before, .lamp-3::before, .lamp-5::before, .lamp-7::before, .lamp-9::before, .lamp-11::before, .lamp-13::before, .lamp-15::before, .lamp-17::before, .lamp-19::before, .lamp-21::before, .lamp-23::before, .lamp-25::before, .lamp-27::before, .lamp-29::before, .lamp-31::before, .lamp-33::before, .lamp-35::before, .lamp-37::before, .lamp-39::before {
   animation-name: lumieres-moving-left;
   animation-duration: 2.8s;
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.lamp-2, .lamp-4, .lamp-6, .lamp-8, .lamp-10, .lamp-12, .lamp-14, .lamp-16, .lamp-18, .lamp-20, .lamp-22, .lamp-24 {
+.lamp-2, .lamp-4, .lamp-6, .lamp-8, .lamp-10, .lamp-12, .lamp-14, .lamp-16, .lamp-18, .lamp-20, .lamp-22, .lamp-24, .lamp-26, .lamp-28, .lamp-30, .lamp-32, .lamp-34, .lamp-36, .lamp-38, .lamp-40 {
   animation-name: lumieres-moving-right;
   animation-duration: 2.5s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.lamp-2::before, .lamp-4::before, .lamp-6::before, .lamp-8::before, .lamp-10::before, .lamp-12::before, .lamp-14::before, .lamp-16::before, .lamp-18::before, .lamp-20::before, .lamp-22::before, .lamp-24::before {
+.lamp-2::before, .lamp-4::before, .lamp-6::before, .lamp-8::before, .lamp-10::before, .lamp-12::before, .lamp-14::before, .lamp-16::before, .lamp-18::before, .lamp-20::before, .lamp-22::before, .lamp-24::before, .lamp-26::before, .lamp-28::before, .lamp-30::before, .lamp-32::before, .lamp-34::before, .lamp-36::before, .lamp-38::before, .lamp-40::before {
   animation-name: lumieres-moving-right;
   animation-duration: 2.8s;
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);

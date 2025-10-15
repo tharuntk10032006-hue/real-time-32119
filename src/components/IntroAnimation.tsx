@@ -24,7 +24,7 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
 
   const renderLumieresEffect = () => (
     <div className="effect-lumieres">
-      {[...Array(25)].map((_, i) => (
+      {[...Array(40)].map((_, i) => (
         <span key={`lamp-${i}`} className={`lamp-${i + 1}`} />
       ))}
     </div>
