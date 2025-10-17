@@ -11,9 +11,17 @@ import netflixBackground from '@/assets/netflix_background.png';
 const Index = () => {
   const [showIntro, setShowIntro] = useState(true);
   const [fadeIn, setFadeIn] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
-    // Prevent scrolling during intro
+    const img = new Image();
+    img.src = netflixBackground;
+    img.onload = () => {
+      setImagesLoaded(true);
+    };
+  }, []);
+
+  useEffect(() => {
     if (showIntro) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -27,7 +35,6 @@ const Index = () => {
 
   const handleIntroComplete = () => {
     setShowIntro(false);
-    // Trigger fade-in animation shortly after intro completes
     setTimeout(() => setFadeIn(true), 50);
   };
 
@@ -38,21 +45,29 @@ const Index = () => {
       {!showIntro && (
         <div className={`min-h-screen bg-background relative transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
           {/* Global Netflix-style Background Carousel */}
-          <div className="fixed inset-0 overflow-hidden z-0">
-            <div className="absolute inset-0 flex animate-[scroll_60s_linear_infinite]">
-              <img 
-                src={netflixBackground} 
-                alt="Background" 
-                className="w-full h-full object-cover opacity-70 flex-shrink-0"
-              />
-              <img 
-                src={netflixBackground} 
-                alt="Background" 
-                className="w-full h-full object-cover opacity-70 flex-shrink-0"
-              />
-            </div>
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60" />
+          <div className="fixed inset-0 overflow-hidden z-0" style={{ backgroundColor: '#000' }}>
+            {imagesLoaded && (
+              <div className="absolute inset-0 flex animate-[scroll_60s_linear_infinite]" style={{ willChange: 'transform' }}>
+                <img
+                  src={netflixBackground}
+                  alt="Background"
+                  className="w-full h-full object-cover opacity-40 flex-shrink-0"
+                  style={{ willChange: 'transform' }}
+                />
+                <img
+                  src={netflixBackground}
+                  alt="Background"
+                  className="w-full h-full object-cover opacity-40 flex-shrink-0"
+                  style={{ willChange: 'transform' }}
+                />
+              </div>
+            )}
+            {/* Subtle Vignette Overlay */}
+            <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/30 to-black/70" style={{
+              background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.7) 100%)'
+            }} />
+            {/* Top fade for header */}
+            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 to-transparent" />
           </div>
 
           {/* Content */}
