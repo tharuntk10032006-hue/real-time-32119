@@ -14,7 +14,6 @@ interface EventCard {
   coordinators: {
     name: string;
     phone: string;
-    year: string;
   }[];
 }
 
@@ -22,13 +21,13 @@ const events: EventCard[] = [
   {
     id: 'brandovation',
     name: 'Brand-o-Vation: The Last Ad-pocalypse',
-    tagline: 'Go Viral or Go Dead 🧟‍♂️',
+    tagline: 'Go Viral or Go Dead',
     poster: brandovationPoster,
     registrationUrl: 'https://brand-o-vation.vercel.app',
     coordinators: [
-      { name: 'Lalith J', phone: '9791382086', year: '2nd yr' },
-      { name: 'Kamalika N M', phone: '9042887720', year: '2nd yr' },
-      { name: 'Akshitha Jyothi D', phone: '6382982045', year: '3rd yr' },
+      { name: 'Lalith J', phone: '9791382086' },
+      { name: 'Kamalika N M', phone: '9042887720' },
+      { name: 'Akshitha Jyothi D', phone: '6382982045' },
     ],
   },
   {
@@ -38,9 +37,9 @@ const events: EventCard[] = [
     poster: paradisePoster,
     registrationUrl: 'https://paradox-protocol-theta.vercel.app',
     coordinators: [
-      { name: 'Varshini', phone: '8667801807', year: '2nd yr' },
-      { name: 'Harsha Nandhini', phone: '9840335963', year: '2nd yr' },
-      { name: 'Surya', phone: '7904461620', year: '3rd yr' },
+      { name: 'Varshini', phone: '8667801807' },
+      { name: 'Harsha Nandhini', phone: '9840335963' },
+      { name: 'Surya', phone: '7904461620' },
     ],
   },
   {
@@ -50,9 +49,9 @@ const events: EventCard[] = [
     poster: venturaPoster,
     registrationUrl: 'https://ventura-zeta.vercel.app',
     coordinators: [
-      { name: 'Sanjay V', phone: '8610315770', year: '2nd yr' },
-      { name: 'Vetrichelva RS', phone: '9344016363', year: '2nd yr' },
-      { name: 'Shaheen', phone: '7845588146', year: '3rd yr' },
+      { name: 'Sanjay V', phone: '8610315770' },
+      { name: 'Vetrichelva RS', phone: '9344016363' },
+      { name: 'Shaheen', phone: '7845588146' },
     ],
   },
   {
@@ -62,9 +61,9 @@ const events: EventCard[] = [
     poster: capitalyzePoster,
     registrationUrl: 'https://capitalyze.vercel.app',
     coordinators: [
-      { name: 'Manodharani', phone: '8438616965', year: '2nd yr' },
-      { name: 'Bhagavadgitan', phone: '9047900060', year: '2nd yr' },
-      { name: 'Keerthana', phone: '9047563090', year: '3rd yr' },
+      { name: 'Manodharani', phone: '8438616965' },
+      { name: 'Bhagavadgitan', phone: '9047900060' },
+      { name: 'Keerthana', phone: '9047563090' },
     ],
   },
 ];
@@ -103,7 +102,7 @@ const EventFlipCard = ({ event }: { event: EventCard }) => {
               {event.coordinators.map((coord, idx) => (
                 <div key={idx} className="space-y-1">
                   <p className="text-sm sm:text-base font-medium">
-                    {coord.name} <span className="text-muted-foreground">({coord.year})</span>
+                    {coord.name}
                   </p>
                   <p className="text-primary text-sm sm:text-base">📞 {coord.phone}</p>
                 </div>

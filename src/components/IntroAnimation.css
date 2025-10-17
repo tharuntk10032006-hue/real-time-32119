@@ -39,6 +39,17 @@
     height: 200px;
     animation-duration: 2.5s;
   }
+
+  .netflix-intro[data-letter="T"] .helper-1 {
+    width: 32%;
+    left: 34%;
+  }
+
+  .netflix-intro[data-letter="T"] .helper-2 {
+    width: 28%;
+    left: 36%;
+    top: -45px;
+  }
 }
 
 .netflix-intro::before {
@@ -361,6 +372,17 @@
     width: 150px;
     height: 150px;
     animation-duration: 2s;
+  }
+
+  .netflix-intro[data-letter="T"] .helper-1 {
+    width: 35%;
+    left: 32.5%;
+  }
+
+  .netflix-intro[data-letter="T"] .helper-2 {
+    width: 32%;
+    left: 34%;
+    top: -35px;
   }
 
   .lamp-21, .lamp-22, .lamp-23, .lamp-24, .lamp-25,

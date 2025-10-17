@@ -84,14 +84,17 @@ const Hero = () => {
       <div className="absolute inset-0" style={{ background: 'var(--gradient-glow)' }} />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-16 sm:py-20 text-center">
+      <div className="relative z-10 container mx-auto px-4 py-16 sm:py-20 lg:py-32 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 animate-fade-in font-cinematic tracking-wide px-4">
           Welcome to{' '}
           <span className="block mt-1 sm:mt-2">
             IN<span className="text-primary text-glow">TEMS</span>TELLAR 2025
           </span>
         </h1>
-        <p className="text-lg sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-12 animate-fade-in px-4">
+        <p className="text-xl sm:text-2xl md:text-3xl text-foreground mb-3 sm:mb-4 animate-fade-in px-4 font-semibold">
+          Chapter 1
+        </p>
+        <p className="text-lg sm:text-lg md:text-xl lg:text-2xl text-foreground mb-8 sm:mb-12 animate-fade-in px-4">
           An IEEE TEMS Symposium Experience
         </p>
 
