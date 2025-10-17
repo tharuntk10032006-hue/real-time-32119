@@ -44,7 +44,7 @@ const About = () => {
               About IEEE <span className="text-primary text-glow">TEMS</span> Sairam Chapter
             </h2>
             
-            <div className={`glass rounded-2xl p-8 sm:p-12 shadow-card hover:shadow-glow transition-all duration-500 delay-300 ${
+            <div className={`bg-card rounded-2xl p-8 sm:p-12 shadow-card hover:shadow-glow transition-all duration-500 delay-300 border border-border ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}>
               <div className="space-y-6 text-muted-foreground">

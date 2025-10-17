@@ -93,7 +93,7 @@ const EventFlipCard = ({ event }: { event: EventCard }) => {
         </div>
 
         {/* Back */}
-        <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-xl overflow-hidden glass shadow-card p-4 sm:p-6 md:p-8 flex flex-col justify-between min-h-full">
+        <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-xl overflow-hidden bg-card shadow-card p-4 sm:p-6 md:p-8 flex flex-col justify-between min-h-full border border-border">
           <div className="flex-1 overflow-y-auto">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4">{event.name}</h3>
             <p className="text-primary text-base sm:text-lg md:text-xl mb-3 sm:mb-6 italic">{event.tagline}</p>

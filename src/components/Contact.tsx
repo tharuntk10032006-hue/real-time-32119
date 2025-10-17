@@ -44,7 +44,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className={`glass rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-glow transition-all duration-500 delay-200 ${
+            <div className={`bg-card rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-glow transition-all duration-500 delay-200 border border-border ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}>
               <div className="flex items-start gap-4">
@@ -60,7 +60,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className={`glass rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-glow transition-all duration-500 delay-300 ${
+            <div className={`bg-card rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-glow transition-all duration-500 delay-300 border border-border ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}>
               <div className="flex items-start gap-4">
@@ -77,7 +77,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className={`glass rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-glow transition-all duration-500 delay-400 ${
+            <div className={`bg-card rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-glow transition-all duration-500 delay-400 border border-border ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}>
               <div className="flex items-start gap-4">
@@ -103,7 +103,7 @@ const Contact = () => {
           </div>
 
           {/* Map */}
-          <div className={`glass rounded-2xl overflow-hidden shadow-card hover:shadow-glow transition-all duration-500 delay-500 ${
+          <div className={`bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-glow transition-all duration-500 delay-500 border border-border ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
           }`}>
             <iframe
