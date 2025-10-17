@@ -39,16 +39,16 @@ const Index = () => {
         <div className={`min-h-screen bg-background relative transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
           {/* Global Netflix-style Background Carousel */}
           <div className="fixed inset-0 overflow-hidden z-0">
-            <div className="absolute inset-0 animate-[scroll_60s_linear_infinite]">
+            <div className="absolute inset-0 flex animate-[scroll_60s_linear_infinite]">
               <img 
                 src={netflixBackground} 
                 alt="Background" 
-                className="absolute inset-0 w-full h-full object-cover opacity-70"
+                className="w-full h-full object-cover opacity-70 flex-shrink-0"
               />
               <img 
                 src={netflixBackground} 
                 alt="Background" 
-                className="absolute inset-0 w-full h-full object-cover opacity-70 translate-x-full"
+                className="w-full h-full object-cover opacity-70 flex-shrink-0"
               />
             </div>
             {/* Gradient Overlay */}
