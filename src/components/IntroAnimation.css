@@ -80,11 +80,11 @@
 }
 
 .netflix-intro[data-letter="T"] .helper-2 {
-  width: 17.5%;
-  height: 54%;
-  left: 39%;
-  top: -55px;
-  transform: rotate(270deg);
+  width: 100%;
+  height: 20%;
+  left: 0;
+  top: 0;
+  transform: none;
   overflow: hidden;
 }
 
@@ -329,7 +329,7 @@
   background-color: #0077ff;
   width: 100%;
   height: 70%;
-  box-shadow: 0px 0px 29px 24px #0077ff;
+  box-shadow: 0px 0px 20px 15px #0077ff;
   will-change: transform;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -418,35 +418,35 @@
 }
 
 /* Lamp styles */
-.lamp-1 { --color: #0088ff; z-index: 6; left: 0.7%; width: 1%; animation-delay: 0.96s; }
+.lamp-1 { --color: #0088ff; z-index: 6; left: 0%; width: 1.2%; animation-delay: 0.96s; }
 .lamp-1::before { left: 96%; animation-delay: 0.22s; }
-.lamp-2 { --color: #00ddff; left: 2.2%; width: 1.4%; animation-delay: 0.62s; }
+.lamp-2 { --color: #00ddff; left: 4%; width: 1.6%; animation-delay: 0.62s; }
 .lamp-2::before { left: 35%; animation-delay: 0.64s; }
-.lamp-3 { --color: #0066ff; left: 5.8%; width: 2.1%; animation-delay: 0.32s; }
+.lamp-3 { --color: #0066ff; left: 8%; width: 2.2%; animation-delay: 0.32s; }
 .lamp-3::before { left: 50%; animation-delay: 0.17s; }
-.lamp-4 { --color: #04a8fd; left: 10.1%; width: 2%; animation-delay: 0.23s; }
+.lamp-4 { --color: #04a8fd; left: 13%; width: 2.3%; animation-delay: 0.23s; }
 .lamp-4::before { left: 180%; animation-delay: 0.43s; }
-.lamp-5 { --color: #0088ff; left: 12.9%; width: 1.4%; animation-delay: 1.14s; }
+.lamp-5 { --color: #0088ff; left: 18%; width: 1.8%; animation-delay: 1.14s; }
 .lamp-5::before { left: 49%; animation-delay: 0.15s; }
-.lamp-6 { --color: #0099ff; left: 15.3%; width: 2.8%; animation-delay: 1.62s; }
+.lamp-6 { --color: #0099ff; left: 23%; width: 3%; animation-delay: 1.62s; }
 .lamp-6::before { left: 42%; animation-delay: 1.8s; }
-.lamp-7 { --color: #0084ff; left: 21.2%; width: 2.5%; animation-delay: 0.51s; }
+.lamp-7 { --color: #0084ff; left: 29%; width: 2.8%; animation-delay: 0.51s; }
 .lamp-7::before { left: 21%; animation-delay: 0.65s; }
-.lamp-8 { --color: #0077ff; left: 25%; width: 2.5%; animation-delay: 1.16s; }
+.lamp-8 { --color: #0077ff; left: 35%; width: 2.8%; animation-delay: 1.16s; }
 .lamp-8::before { left: 102%; animation-delay: 0.37s; }
-.lamp-9 { --color: #00aaff; left: 30.5%; width: 3%; animation-delay: 0.93s; }
+.lamp-9 { --color: #00aaff; left: 41%; width: 3.2%; animation-delay: 0.93s; }
 .lamp-9::before { left: 118%; animation-delay: 0.06s; }
-.lamp-10 { --color: #0088ff; left: 36.3%; width: 3%; animation-delay: 1s; }
+.lamp-10 { --color: #0088ff; left: 47%; width: 3.2%; animation-delay: 1s; }
 .lamp-10::before { left: 47%; animation-delay: 0.14s; }
-.lamp-11 { --color: #0077ff; left: 41%; width: 2.2%; animation-delay: 0.63s; }
+.lamp-11 { --color: #0077ff; left: 53%; width: 2.5%; animation-delay: 0.63s; }
 .lamp-11::before { left: 114%; animation-delay: 1.3s; }
-.lamp-12 { --color: #01ccff; left: 44.2%; width: 2.6%; animation-delay: 0.46s; }
+.lamp-12 { --color: #01ccff; left: 58%; width: 2.8%; animation-delay: 0.46s; }
 .lamp-12::before { left: 71%; animation-delay: 0.05s; }
-.lamp-13 { --color: #00aaff; left: 51.7%; width: 0.5%; animation-delay: 1.25s; }
+.lamp-13 { --color: #00aaff; left: 64%; width: 2.5%; animation-delay: 1.25s; }
 .lamp-13::before { left: 3%; animation-delay: 0.4s; }
-.lamp-14 { --color: #00aaff; left: 52.1%; width: 1.8%; animation-delay: 1.34s; }
+.lamp-14 { --color: #00aaff; left: 70%; width: 2.2%; animation-delay: 1.34s; }
 .lamp-14::before { left: 28%; animation-delay: 1.61s; }
-.lamp-15 { --color: #0078fe; left: 53.8%; width: 2.3%; animation-delay: 1.38s; }
+.lamp-15 { --color: #0078fe; left: 76%; width: 2.5%; animation-delay: 1.38s; }
 .lamp-15::before { left: 54%; animation-delay: 0.73s; }
 
 .lamp-1, .lamp-3, .lamp-5, .lamp-7, .lamp-9, .lamp-11, .lamp-13, .lamp-15 {
@@ -488,15 +488,13 @@
 
 @keyframes lumieres-moving-right {
   0% { transform: translate3d(0, 0, 0) scaleX(1); opacity: 1; }
-  30% { transform: translate3d(-20px, 0, 0) scaleX(1.2); opacity: 1; }
-  60% { transform: translate3d(-80px, 0, 0) scaleX(2); opacity: 0.8; }
+  50% { transform: translate3d(-80px, 0, 0) scaleX(2); opacity: 0.8; }
   100% { transform: translate3d(-150px, 0, 0) scaleX(3.5); opacity: 0; }
 }
 
 @keyframes lumieres-moving-left {
   0% { transform: translate3d(0, 0, 0) scaleX(1); opacity: 1; }
-  30% { transform: translate3d(20px, 0, 0) scaleX(1.2); opacity: 1; }
-  60% { transform: translate3d(80px, 0, 0) scaleX(2); opacity: 0.8; }
+  50% { transform: translate3d(80px, 0, 0) scaleX(2); opacity: 0.8; }
   100% { transform: translate3d(150px, 0, 0) scaleX(3.5); opacity: 0; }
 }
 
@@ -539,10 +537,6 @@
     width: 150px;
     height: 150px;
     animation-duration: 2.5s;
-  }
-
-  .lamp-11, .lamp-12, .lamp-13, .lamp-14, .lamp-15 {
-    display: none;
   }
 }
 

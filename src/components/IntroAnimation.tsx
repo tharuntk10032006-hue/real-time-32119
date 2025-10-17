@@ -31,13 +31,16 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
     return () => clearTimeout(timer);
   }, [onComplete]);
 
-  const renderBrushEffect = () => (
-    <div className="effect-brush">
-      {[...Array(15)].map((_, i) => (
-        <span key={i} className={`fur-${15 - i}`}></span>
-      ))}
-    </div>
-  );
+  const renderBrushEffect = () => {
+    const furCount = reducedElements ? 8 : 15;
+    return (
+      <div className="effect-brush">
+        {[...Array(furCount)].map((_, i) => (
+          <span key={i} className={`fur-${furCount - i}`}></span>
+        ))}
+      </div>
+    );
+  };
 
   const renderLumieresEffect = () => {
     const lampCount = reducedElements ? 10 : 15;
