@@ -1,54 +1,50 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './IntroAnimation.css';
 
 interface IntroAnimationProps {
   onComplete: () => void;
 }
 
-const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
+const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
+  const [reducedElements, setReducedElements] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+    const checkPerformance = () => {
+      const isMobile = window.innerWidth <= 768;
+      const isLowEnd = navigator.hardwareConcurrency ? navigator.hardwareConcurrency <= 4 : false;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      setReducedElements(isMobile || isLowEnd || prefersReducedMotion);
     };
 
-    const checkReducedMotion = () => {
-      setIsReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    };
+    checkPerformance();
+    window.addEventListener('resize', checkPerformance);
 
-    checkMobile();
-    checkReducedMotion();
-
-    window.addEventListener('resize', checkMobile);
-
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkPerformance);
   }, []);
 
   useEffect(() => {
-    const duration = isReducedMotion ? 1500 : (isMobile ? 2800 : 4100);
     const timer = setTimeout(() => {
       onComplete();
-    }, duration);
+    }, 3200);
 
     return () => clearTimeout(timer);
-  }, [onComplete, isMobile, isReducedMotion]);
+  }, [onComplete]);
 
   const renderBrushEffect = () => (
     <div className="effect-brush">
-      {[...Array(10)].map((_, i) => (
-        <span key={`fur-${i}`} className={`fur-${i + 1}`} />
+      {[...Array(15)].map((_, i) => (
+        <span key={i} className={`fur-${15 - i}`}></span>
       ))}
     </div>
   );
 
   const renderLumieresEffect = () => {
-    const lampCount = isMobile ? 20 : 40;
+    const lampCount = reducedElements ? 10 : 15;
     return (
       <div className="effect-lumieres">
         {[...Array(lampCount)].map((_, i) => (
-          <span key={`lamp-${i}`} className={`lamp-${i + 1}`} />
+          <span key={i} className={`lamp-${i + 1}`}></span>
         ))}
       </div>
     );
