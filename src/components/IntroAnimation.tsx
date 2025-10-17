@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './IntroAnimation.css';
 
 interface IntroAnimationProps {
@@ -6,23 +6,6 @@ interface IntroAnimationProps {
 }
 
 const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
-  const [reducedElements, setReducedElements] = useState(false);
-
-  useEffect(() => {
-    const checkPerformance = () => {
-      const isMobile = window.innerWidth <= 768;
-      const isLowEnd = navigator.hardwareConcurrency ? navigator.hardwareConcurrency <= 4 : false;
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      setReducedElements(isMobile || isLowEnd || prefersReducedMotion);
-    };
-
-    checkPerformance();
-    window.addEventListener('resize', checkPerformance);
-
-    return () => window.removeEventListener('resize', checkPerformance);
-  }, []);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
@@ -31,27 +14,21 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
     return () => clearTimeout(timer);
   }, [onComplete]);
 
-  const renderBrushEffect = () => {
-    const furCount = reducedElements ? 8 : 15;
-    return (
-      <div className="effect-brush">
-        {[...Array(furCount)].map((_, i) => (
-          <span key={i} className={`fur-${furCount - i}`}></span>
-        ))}
-      </div>
-    );
-  };
+  const renderBrushEffect = () => (
+    <div className="effect-brush">
+      {[...Array(15)].map((_, i) => (
+        <span key={i} className={`fur-${15 - i}`}></span>
+      ))}
+    </div>
+  );
 
-  const renderLumieresEffect = () => {
-    const lampCount = reducedElements ? 10 : 15;
-    return (
-      <div className="effect-lumieres">
-        {[...Array(lampCount)].map((_, i) => (
-          <span key={i} className={`lamp-${i + 1}`}></span>
-        ))}
-      </div>
-    );
-  };
+  const renderLumieresEffect = () => (
+    <div className="effect-lumieres">
+      {[...Array(15)].map((_, i) => (
+        <span key={i} className={`lamp-${i + 1}`}></span>
+      ))}
+    </div>
+  );
 
   return (
     <div id="intro-container">
