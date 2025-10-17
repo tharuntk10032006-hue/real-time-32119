@@ -43,16 +43,16 @@ const Index = () => {
               <img 
                 src={netflixBackground} 
                 alt="Background" 
-                className="absolute inset-0 w-full h-full object-cover opacity-50"
+                className="absolute inset-0 w-full h-full object-cover opacity-70"
               />
               <img 
                 src={netflixBackground} 
                 alt="Background" 
-                className="absolute inset-0 w-full h-full object-cover opacity-50 translate-x-full"
+                className="absolute inset-0 w-full h-full object-cover opacity-70 translate-x-full"
               />
             </div>
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60" />
           </div>
 
           {/* Content */}
