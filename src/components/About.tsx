@@ -1,9 +1,36 @@
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+    <section 
+      ref={sectionRef}
+      id="about" 
+      className={`relative py-12 sm:py-16 md:py-20 overflow-hidden transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/10 to-black" />
       
@@ -11,11 +38,15 @@ const About = () => {
         <div className="space-y-8">
           {/* Text Content */}
           <div className="space-y-6 text-center md:text-left">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-8">
+            <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-black mb-8 transition-all duration-700 delay-200 ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+            }`}>
               About IEEE <span className="text-primary text-glow">TEMS</span> Sairam Chapter
             </h2>
             
-            <div className="glass rounded-2xl p-8 sm:p-12 shadow-card">
+            <div className={`glass rounded-2xl p-8 sm:p-12 shadow-card hover:shadow-glow transition-all duration-500 delay-300 ${
+              isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}>
               <div className="space-y-6 text-muted-foreground">
                 <h3 className="text-xl sm:text-2xl font-bold text-foreground">Our Story</h3>
                 <p className="text-base sm:text-lg leading-relaxed">
