@@ -5,7 +5,6 @@ import brandovationCard from '@/assets/brandovation_card.jpeg';
 import paradiseCard from '@/assets/paradise_card.jpeg';
 import capitalyzeCard from '@/assets/capitalyze_card.jpeg';
 import venturaCard from '@/assets/ventura_card.jpeg';
-import netflixBackground from '@/assets/netflix_background.png';
 
 const events = [
   {
@@ -81,24 +80,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Netflix-style Background Carousel */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 animate-[scroll_60s_linear_infinite]">
-          <img 
-            src={netflixBackground} 
-            alt="Background" 
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
-          />
-          <img 
-            src={netflixBackground} 
-            alt="Background" 
-            className="absolute inset-0 w-full h-full object-cover opacity-30 translate-x-full"
-          />
-        </div>
-      </div>
-      
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-blue-950/60 to-black/80 backdrop-blur-sm" />
+      {/* Gradient Effects */}
       <div className="absolute inset-0" style={{ background: 'var(--gradient-glow)' }} />
 
       {/* Content */}
