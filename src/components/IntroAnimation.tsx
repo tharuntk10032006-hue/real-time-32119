@@ -1,53 +1,48 @@
-import { useEffect, useMemo, memo } from 'react';
+import React, { useEffect } from 'react';
 import './IntroAnimation.css';
 
 interface IntroAnimationProps {
   onComplete: () => void;
 }
 
-const BrushEffect = memo(() => {
-  const furElements = useMemo(() =>
-    [1, 3, 5, 7, 9, 11, 13, 15].map((num) => (
-      <span key={num} className={`fur-${num}`} />
-    )),
-  []);
-
-  return <div className="effect-brush">{furElements}</div>;
-});
-
-BrushEffect.displayName = 'BrushEffect';
-
-const LumieresEffect = memo(() => {
-  const lampElements = useMemo(() =>
-    [1, 3, 5, 7, 9, 11, 13, 15].map((num) => (
-      <span key={num} className={`lamp-${num}`} />
-    )),
-  []);
-
-  return <div className="effect-lumieres">{lampElements}</div>;
-});
-
-LumieresEffect.displayName = 'LumieresEffect';
-
-const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
+const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
   useEffect(() => {
-    const timer = setTimeout(onComplete, 4100);
+    const timer = setTimeout(() => {
+      onComplete();
+    }, 3200);
+
     return () => clearTimeout(timer);
   }, [onComplete]);
+
+  const renderBrushEffect = () => (
+    <div className="effect-brush">
+      {[...Array(15)].map((_, i) => (
+        <span key={i} className={`fur-${15 - i}`}></span>
+      ))}
+    </div>
+  );
+
+  const renderLumieresEffect = () => (
+    <div className="effect-lumieres">
+      {[...Array(15)].map((_, i) => (
+        <span key={i} className={`lamp-${i + 1}`}></span>
+      ))}
+    </div>
+  );
 
   return (
     <div id="intro-container">
       <div className="netflix-intro" data-letter="T">
         <div className="helper-1">
-          <BrushEffect />
-          <LumieresEffect />
+          {renderBrushEffect()}
+          {renderLumieresEffect()}
         </div>
         <div className="helper-2">
-          <BrushEffect />
+          {renderBrushEffect()}
         </div>
       </div>
     </div>
   );
 };
 
-export default memo(IntroAnimation);
+export default IntroAnimation;
