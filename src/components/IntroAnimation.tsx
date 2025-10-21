@@ -7,8 +7,8 @@ interface IntroAnimationProps {
 
 const BrushEffect = memo(() => {
   const furElements = useMemo(() =>
-    Array.from({ length: 15 }, (_, i) => (
-      <span key={15 - i} className={`fur-${15 - i}`} />
+    Array.from({ length: 8 }, (_, i) => (
+      <span key={15 - i * 2} className={`fur-${15 - i * 2}`} />
     )),
   []);
 
@@ -19,8 +19,8 @@ BrushEffect.displayName = 'BrushEffect';
 
 const LumieresEffect = memo(() => {
   const lampElements = useMemo(() =>
-    Array.from({ length: 15 }, (_, i) => (
-      <span key={i + 1} className={`lamp-${i + 1}`} />
+    Array.from({ length: 8 }, (_, i) => (
+      <span key={i * 2 + 1} className={`lamp-${i * 2 + 1}`} />
     )),
   []);
 
