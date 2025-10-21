@@ -13,9 +13,10 @@
   overflow: hidden;
   z-index: 9999;
   contain: layout style paint;
-  will-change: auto;
+  will-change: contents;
   transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .netflix-intro {
@@ -26,8 +27,9 @@
   overflow: hidden;
   animation: zoom-in 3.5s ease-in 0.5s forwards;
   will-change: transform;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .netflix-intro::before {
@@ -301,9 +303,9 @@
 /* Common Helper Styles */
 .netflix-intro [class*="helper-"] {
   position: absolute;
-  will-change: auto;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .netflix-intro [class*="helper-"] .effect-brush {
@@ -313,8 +315,9 @@
   top: 0;
   overflow: hidden;
   will-change: transform;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .netflix-intro [class*="helper-"] .effect-brush::before {
@@ -324,10 +327,10 @@
   background-color: #0077ff;
   width: 100%;
   height: 70%;
-  filter: blur(20px);
-  will-change: auto;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  box-shadow: 0px 0px 29px 24px #0077ff;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .netflix-intro [class*="helper-"] .effect-brush [class*="fur-"] {
@@ -335,9 +338,9 @@
   position: absolute;
   bottom: 10%;
   height: 30%;
-  will-change: auto;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Fur gradients */
@@ -358,8 +361,9 @@
   opacity: 0;
   animation: showing-lumieres 2s 1.6s forwards;
   will-change: opacity;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .netflix-intro [class*="helper-"] .effect-lumieres [class*="lamp-"] {
@@ -367,10 +371,11 @@
   display: block;
   height: 100%;
   background: var(--color);
-  filter: blur(3px);
+  box-shadow: 0px 0px 10px 0px rgba(0, 119, 255, 0.75);
   will-change: transform, opacity;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .netflix-intro [class*="helper-"] .effect-lumieres [class*="lamp-"]::before {
@@ -380,10 +385,11 @@
   width: 100%;
   height: 100%;
   background: var(--color);
-  filter: blur(3px);
+  box-shadow: 0px 0px 10px 0px rgba(0, 119, 255, 0.75);
   will-change: transform, opacity;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Lamp styles */
@@ -422,8 +428,8 @@
 
 /* Keyframes */
 @keyframes brush-moving {
-  0% { transform: translateY(0) translateZ(0); }
-  100% { transform: translateY(-100%) translateZ(0); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -100%, 0); }
 }
 
 @keyframes fading-out {
@@ -432,22 +438,22 @@
 }
 
 @keyframes lumieres-moving-right {
-  0% { transform: translateX(0) scaleX(1) translateZ(0); opacity: 1; }
-  30% { transform: translateX(-20px) scaleX(1.2) translateZ(0); opacity: 1; }
-  60% { transform: translateX(-80px) scaleX(2) translateZ(0); opacity: 0.8; }
-  100% { transform: translateX(-150px) scaleX(3.5) translateZ(0); opacity: 0; }
+  0% { transform: translate3d(0, 0, 0) scaleX(1); opacity: 1; }
+  30% { transform: translate3d(-20px, 0, 0) scaleX(1.2); opacity: 1; }
+  60% { transform: translate3d(-80px, 0, 0) scaleX(2); opacity: 0.8; }
+  100% { transform: translate3d(-150px, 0, 0) scaleX(3.5); opacity: 0; }
 }
 
 @keyframes lumieres-moving-left {
-  0% { transform: translateX(0) scaleX(1) translateZ(0); opacity: 1; }
-  30% { transform: translateX(20px) scaleX(1.2) translateZ(0); opacity: 1; }
-  60% { transform: translateX(80px) scaleX(2) translateZ(0); opacity: 0.8; }
-  100% { transform: translateX(150px) scaleX(3.5) translateZ(0); opacity: 0; }
+  0% { transform: translate3d(0, 0, 0) scaleX(1); opacity: 1; }
+  30% { transform: translate3d(20px, 0, 0) scaleX(1.2); opacity: 1; }
+  60% { transform: translate3d(80px, 0, 0) scaleX(2); opacity: 0.8; }
+  100% { transform: translate3d(150px, 0, 0) scaleX(3.5); opacity: 0; }
 }
 
 @keyframes zoom-in {
-  0% { transform: scale(1) translateZ(0); }
-  100% { transform: scale(15) translateZ(0); }
+  0% { transform: scale3d(1, 1, 1); }
+  100% { transform: scale3d(15, 15, 1); }
 }
 
 @keyframes showing-lumieres {
@@ -458,4 +464,23 @@
 @keyframes fading-lumieres-box {
   0% { background-color: rgba(0, 119, 255, 0.5); }
   100% { background-color: rgba(0, 119, 255, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .netflix-intro {
+    animation-duration: 1.5s;
+  }
+
+  .netflix-intro [class*="helper-"] .effect-brush {
+    animation-duration: 1s;
+  }
+
+  .lamp-1, .lamp-3, .lamp-5, .lamp-7, .lamp-9, .lamp-11, .lamp-13, .lamp-15 {
+    animation-duration: 1s;
+  }
+
+  .lamp-1::before, .lamp-3::before, .lamp-5::before, .lamp-7::before,
+  .lamp-9::before, .lamp-11::before, .lamp-13::before, .lamp-15::before {
+    animation-duration: 1s;
+  }
 }
