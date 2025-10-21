@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import './IntroAnimation.css';
 
 interface IntroAnimationProps {
@@ -14,31 +14,31 @@ const IntroAnimation: React.FC<IntroAnimationProps> = ({ onComplete }) => {
     return () => clearTimeout(timer);
   }, [onComplete]);
 
-  const brushEffect = useMemo(() => (
+  const renderBrushEffect = () => (
     <div className="effect-brush">
       {[...Array(15)].map((_, i) => (
         <span key={i} className={`fur-${15 - i}`}></span>
       ))}
     </div>
-  ), []);
+  );
 
-  const lumieresEffect = useMemo(() => (
+  const renderLumieresEffect = () => (
     <div className="effect-lumieres">
       {[...Array(15)].map((_, i) => (
         <span key={i} className={`lamp-${i + 1}`}></span>
       ))}
     </div>
-  ), []);
+  );
 
   return (
     <div id="intro-container">
       <div className="netflix-intro" data-letter="T">
         <div className="helper-1">
-          {brushEffect}
-          {lumieresEffect}
+          {renderBrushEffect()}
+          {renderLumieresEffect()}
         </div>
         <div className="helper-2">
-          {brushEffect}
+          {renderBrushEffect()}
         </div>
       </div>
     </div>
