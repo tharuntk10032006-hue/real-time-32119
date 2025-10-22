@@ -89,16 +89,21 @@ const Contact = () => {
       ]
     },
     {
-      title: "Staff Coordinators",
+      title: "Staff Coordinator",
       coordinators: [
         { 
-          name: "Prabhu D", 
-          designation: "Assistant Professor: Computer Science & Business Systems",
+          name: "Mr. Prabhu D", 
+          designation: "Assistant Professor, Department of Computer Science & Business Systems",
           image: "/coordinators/staff/Prabhu D - Staff Coordinator.jpg" 
         },
+      ]
+    },
+    {
+      title: "Chapter Advisor",
+      coordinators: [
         { 
-          name: "Dr. Rene Robin", 
-          designation: "IEEE TEMS Chapter Advisor",
+          name: "Dr. C. R. Rene Robin", 
+          designation: "IEEE TEMS Chapter Advisor & Dean of Innovation @ Sairam",
           image: "/coordinators/staff/Rene Robin - IEEE TEMS Chapter Advisor.jpg" 
         },
       ]
@@ -154,7 +159,7 @@ const Contact = () => {
         {/* Coordinators Section */}
         <section ref={sectionRef} className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="space-y-16">
-            {coordinatorSections.map((section, sectionIndex) => (
+            {coordinatorSections.slice(0, -2).map((section, sectionIndex) => (
               <div 
                 key={section.title}
                 className={`transition-all duration-700 delay-${sectionIndex * 100} ${
@@ -206,6 +211,57 @@ const Contact = () => {
                 </div>
               </div>
             ))}
+            
+            {/* Staff Coordinator and Chapter Advisor Side by Side */}
+            <div className={`transition-all duration-700 delay-${(coordinatorSections.length - 2) * 100} ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                {coordinatorSections.slice(-2).map((section, index) => (
+                  <div key={section.title} className="text-center">
+                    <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+                      {section.title}
+                    </h2>
+                    
+                    <div className="flex justify-center">
+                      {section.coordinators.map((coordinator, coordIndex) => (
+                        <div
+                          key={coordinator.name}
+                          className="bg-card rounded-xl p-4 shadow-card hover:shadow-glow transition-all duration-300 border border-border group w-64 flex-shrink-0"
+                        >
+                          <div className="aspect-square mb-4 overflow-hidden rounded-lg">
+                            <img
+                              src={coordinator.image}
+                              alt={coordinator.name}
+                              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.src = '/placeholder.svg';
+                              }}
+                            />
+                          </div>
+                          
+                          <div className="text-center">
+                            <h3 className="text-sm font-semibold mb-2 leading-tight min-h-[2.5rem] flex items-center justify-center whitespace-pre-line text-center">{coordinator.name}</h3>
+                            {coordinator.designation && (
+                              <p className="text-xs text-muted-foreground mb-2 leading-tight min-h-[3rem] flex items-center justify-center">{coordinator.designation}</p>
+                            )}
+                            {coordinator.phone && (
+                              <a 
+                                href={`tel:${coordinator.phone}`}
+                                className="text-primary hover:underline text-xs block"
+                              >
+                                {coordinator.phone}
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
