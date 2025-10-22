@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +19,26 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleContactClick = () => {
+    navigate('/contact');
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -33,9 +51,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <div className="flex-shrink-0">
-            <h1 className="text-xl sm:text-2xl font-bold tracking-wider">
+            <Link to="/" className="text-xl sm:text-2xl font-bold tracking-wider hover:text-primary/90 transition-colors">
               IN<span className="text-primary text-glow">TEMS</span>TELLAR
-            </h1>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
@@ -59,7 +77,7 @@ const Navbar = () => {
               Events
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={handleContactClick}
               className="text-foreground hover:text-primary transition-colors"
             >
               Contact
@@ -105,7 +123,7 @@ const Navbar = () => {
               Events
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={handleContactClick}
               className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
             >
               Contact
