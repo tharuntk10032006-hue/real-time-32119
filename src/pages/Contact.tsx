@@ -50,42 +50,42 @@ const Contact = () => {
     {
       title: "Symposium Coordinators",
       coordinators: [
-        { name: "Gomathi M", image: "/coordinators/symposium/Gomathi M.jpg" },
-        { name: "Priyadharshini M", image: "/coordinators/symposium/Priyadharshini M.jpg" },
-        { name: "Yogesh Odayar\nP S", image: "/coordinators/symposium/Yogesh Odayar P S.jpg" },
-        { name: "Yogeshwaran Kumar", image: "/coordinators/symposium/Yogeshwaran Kumar.jpg" },
+        { name: "Gomathi M", phone: "+91 9361918960", image: "/coordinators/symposium/Gomathi M.jpg" },
+        { name: "Priyadharshini M", phone: "+91 9363606104", image: "/coordinators/symposium/Priyadharshini M.jpg" },
+        { name: "Yogesh Odayar\nP S", phone: "+91 8072137815", image: "/coordinators/symposium/Yogesh Odayar P S.jpg" },
+        { name: "Yogeshwaran Kumar", phone: "+91 8270380071", image: "/coordinators/symposium/Yogeshwaran Kumar.jpg" },
       ]
     },
     {
       title: "Brand O Vation Coordinators",
       coordinators: [
-        { name: "Akshitha Jyothi D", image: "/coordinators/brandovation/Akshitha Jyothi D .jpg" },
-        { name: "Kamalika N M", image: "/coordinators/brandovation/Kamalika N M.jpg" },
-        { name: "Lalith JR", image: "/coordinators/brandovation/Lalith JR.jpg" },
+        { name: "Akshitha Jyothi D", phone: "+91 6382982045", image: "/coordinators/brandovation/Akshitha Jyothi D .jpg" },
+        { name: "Kamalika N M", phone: "+91 9042887720", image: "/coordinators/brandovation/Kamalika N M.jpg" },
+        { name: "Lalith JR", phone: "+91 9791382086", image: "/coordinators/brandovation/Lalith JR.jpg" },
       ]
     },
     {
       title: "Paradox Protocol Coordinators",
       coordinators: [
-        { name: "Harsha Nandhini K", image: "/coordinators/paradox/Harsha Nandhini K.jpg" },
-        { name: "Surya", image: "/coordinators/paradox/SURYA.JPG" },
-        { name: "Varshini Elumalai Palani", image: "/coordinators/paradox/Varshini Elumalai Palani .jpg" },
+        { name: "Harsha Nandhini K", phone: "+91 9840335963", image: "/coordinators/paradox/Harsha Nandhini K.jpg" },
+        { name: "Surya", phone: "+91 7904461620", image: "/coordinators/paradox/SURYA.JPG" },
+        { name: "Varshini Elumalai Palani", phone: "+91 8667801807", image: "/coordinators/paradox/Varshini Elumalai Palani .jpg" },
       ]
     },
     {
       title: "Capitalyze Coordinators",
       coordinators: [
-        { name: "Bhagavadgitan", image: "/coordinators/capitalyze/Bhagavadgitan.jpg" },
-        { name: "Keerthana V", image: "/coordinators/capitalyze/keerthana V_.jpg" },
-        { name: "Manodharani", image: "/coordinators/capitalyze/Manodharani.jpg" },
+        { name: "Bhagavadgitan", phone: "+91 9047900060", image: "/coordinators/capitalyze/Bhagavadgitan.jpg" },
+        { name: "Keerthana V", phone: "+91 9047563090", image: "/coordinators/capitalyze/keerthana V_.jpg" },
+        { name: "Manodharani", phone: "+91 8438616965", image: "/coordinators/capitalyze/Manodharani.jpg" },
       ]
     },
     {
       title: "Ventura Coordinators",
       coordinators: [
-        { name: "Sanjay V", image: "/coordinators/ventura/SANJAY V.jpg" },
-        { name: "Shaheen", image: "/coordinators/ventura/shaheen.jpg" },
-        { name: "Vetri Chelva R S", image: "/coordinators/ventura/VETRI CHELVA R S_.png" },
+        { name: "Sanjay V", phone: "+91 8610315770", image: "/coordinators/ventura/SANJAY V.jpg" },
+        { name: "Shaheen", phone: "+91 7845588146", image: "/coordinators/ventura/shaheen.jpg" },
+        { name: "Vetri Chelva R S", phone: "+91 9344016363", image: "/coordinators/ventura/VETRI CHELVA R S_.png" },
       ]
     },
     {
@@ -182,7 +182,9 @@ const Contact = () => {
                           <img
                             src={coordinator.image}
                             alt={coordinator.name}
-                            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                            className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${
+                              coordinator.name === 'Priyadharshini M' ? 'object-top' : 'object-center'
+                            }`}
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
                               target.src = '/placeholder.svg';
