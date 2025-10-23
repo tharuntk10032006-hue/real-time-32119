@@ -91,7 +91,7 @@ const Hero = () => {
             IN<span className="text-primary text-glow">TEMS</span>TELLAR 2025
           </span>
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl text-foreground mb-3 sm:mb-4 animate-fade-in px-4 font-semibold">
+        <p className="text-xl sm:text-2xl md:text-3xl text-primary text-glow mb-3 sm:mb-4 animate-fade-in px-4 font-semibold">
           Chapter 1
         </p>
         <p className="text-lg sm:text-lg md:text-xl lg:text-2xl text-foreground mb-8 sm:mb-12 animate-fade-in px-4">
